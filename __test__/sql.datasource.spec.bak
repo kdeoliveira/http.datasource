@@ -1,0 +1,31 @@
+import { SqlDataSource } from "../src";
+import { Request } from "../src/types/datasource.types";
+import typeorm from "typeorm";
+
+class Person{
+    id!:number;
+    name!:string;
+}
+
+
+describe('Sql DataSource API', () => {
+    let sqlDataSource : any;
+
+
+    beforeEach((done) => {
+
+        (typeorm as any).getConnection = jest.fn();
+
+        sqlDataSource = new (class extends SqlDataSource<Person>{
+            protected onRequest(request: Request<unknown>): Promise<void> {
+                return Promise.resolve();
+            }
+            constructor(){
+                super("", typeorm.getConnection(), Person)
+            }
+
+
+        })
+    })
+
+})

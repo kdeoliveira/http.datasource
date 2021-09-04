@@ -1,0 +1,40 @@
+{
+  "name": "kdeoliveira.datasource",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index",
+  "types": "dist/index",
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "setup": "npm install",
+    "test": "jest --detectOpenHandles"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/lru-cache": "^5.1.1",
+    "@types/node": "^16.4.13",
+    "@types/supertest": "^2.0.11",
+    "jest": "^27.0.6",
+    "kdeoliveira.types": "file:~/dev/kdeoliveira.types/",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.4",
+    "ts-jest": "^27.0.4",
+    "ts-node": "^10.2.0",
+    "typeorm": "^0.2.36",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@alloc/quick-lru": "^5.2.0",
+    "lodash": "^4.17.21",
+    "lru-cache": "^6.0.0",
+    "p-timeout": "^4.1.0",
+    "secure-json-parse": "^2.4.0",
+    "undici": "^4.3.1"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}

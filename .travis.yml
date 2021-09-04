@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - lts/*
+
+before_script:
+  - npm run setup
+
+script:
+  - npm test
+
+after_success:
+  - npm pack
+
+
+branches:
+  only:
+    - master
+    - dev
